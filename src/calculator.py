@@ -35,3 +35,27 @@ class Calculator:
             Произведение a и b
         """
         return float(a * b)
+    
+
+    def divide(self, a: float, b: float) -> float:
+        """
+        Делит первое число на второе.
+        
+        Args:
+            a: Делимое
+            b: Делитель
+            
+        Returns:
+            Результат деления
+            
+        Raises:
+            ValueError: Если делитель равен 0
+            
+        Example:
+            >>> calc = Calculator()
+            >>> calc.divide(6, 2)
+            3.0
+        """
+        if b == 0:
+            raise ValueError("Деление на ноль невозможно")
+        return a / b
