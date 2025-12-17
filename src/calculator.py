@@ -2,6 +2,9 @@
 Простой калькулятор для демонстрации Docs as Code.
 """
 
+import math
+
+
 class Calculator:
     """Класс для базовых арифметических операций."""
     
@@ -59,3 +62,51 @@ class Calculator:
         if b == 0:
             raise ValueError("Деление на ноль невозможно")
         return a / b
+    
+    def power(self, base: float, exponent: float) -> float:
+        """
+        Возводит число в степень.
+        
+        Args:
+            base: Основание
+            exponent: Показатель степени
+            
+        Returns:
+            base в степени exponent
+            
+        Example:
+            >>> calc = Calculator()
+            >>> calc.power(2, 3)
+            8.0
+            
+            >>> calc.power(4, 0.5)
+            2.0  # квадратный корень
+        """
+        return math.pow(base, exponent)
+    
+    def sqrt(self, number: float) -> float:
+        """
+        Вычисляет квадратный корень числа.
+        
+        Args:
+            number: Число для извлечения корня
+            
+        Returns:
+            Квадратный корень из number
+            
+        Raises:
+            ValueError: Если number отрицательный
+            
+        Example:
+            >>> calc = Calculator()
+            >>> calc.sqrt(16)
+            4.0
+            
+            >>> calc.sqrt(-1)
+            Traceback (most recent call last):
+            ...
+            ValueError: Нельзя извлечь корень из отрицательного числа
+        """
+        if number < 0:
+            raise ValueError("Нельзя извлечь корень из отрицательного числа")
+        return math.sqrt(number)
