@@ -23,14 +23,14 @@ plugins:
             docstring_style: google
             separate_signature: true
             line_length: 80
-            # 👇 ВАЖНО: Настройки для примеров
-            show_examples: true
-            examples_as_code: true # Показывать примеры как блоки кода
+            # 👇 ВМЕСТО show_examples используем show_signature_annotations
+            show_signature_annotations: true
             merge_init_into_class: true
-            # 👇 Дополнительные настройки для красоты
             members_order: source
             group_by_category: false
-            filters: ["!^_", "!^__"] # Только публичные методы
+            filters: ["!^_", "!^__"]
+            # 👇 Примеры теперь включаются через docstring_style
+            summary: false
 
 markdown_extensions:
   - admonition
